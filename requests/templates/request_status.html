@@ -1,0 +1,12 @@
+<!-- request_status.html -->
+<h2>Your Service Requests</h2>
+
+{% if requests %}
+    <ul>
+        {% for request in requests %}
+            <li>{{ request.request_type }} - {{ request.status }} (Submitted: {{ request.created_at }})</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No service requests found.</p>
+{% endif %}
